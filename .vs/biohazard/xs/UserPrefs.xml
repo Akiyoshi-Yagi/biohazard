@@ -1,9 +1,11 @@
 ﻿<Properties StartupConfiguration="{3E117F87-C79C-FAAC-4685-B50025B549FA}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemyMove.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SearchCharacter.cs">
     <Files>
-      <File FileName="Assets/Scripts/playerMove.cs" Line="15" Column="6" />
+      <File FileName="Assets/Scripts/playerMove.cs" Line="13" Column="1" />
       <File FileName="Assets/Scripts/changeCamera.cs" Line="22" Column="17" />
-      <File FileName="Assets/Scripts/EnemyMove.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/EnemyMove.cs" Line="36" Column="18" />
+      <File FileName="Assets/Scripts/setDestination.cs" Line="12" Column="9" />
+      <File FileName="Assets/Scripts/SearchCharacter.cs" Line="9" Column="9" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,10 +13,15 @@
           <Node name="biohazard" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="EnemyMove.cs" selected="True" />
+                <Node name="SearchCharacter.cs" selected="True" />
               </Node>
             </Node>
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="biohazard" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>

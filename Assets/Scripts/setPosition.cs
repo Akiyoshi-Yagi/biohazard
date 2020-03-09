@@ -1,0 +1,38 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class setPosition : MonoBehaviour
+{
+    private Vector3 startPosition;
+    private Vector3 destination;
+
+    void Start()
+    {
+        startPosition = transform.position;
+        SetDestination(transform.position);
+        
+    }
+
+    public void CreateRandomPosition()
+    {
+        var randDestination = Random.insideUnitCircle * 8;
+        SetDestination(startPosition + new Vector3(randDestination.x, 0, randDestination.y));
+        Debug.Log("スタート" + startPosition);
+    }
+
+    public void SetDestination(Vector3 position)
+    {
+        destination = position;
+    }
+
+    public Vector3 GetDestination()
+    {
+        return destination;
+    }
+
+    void Update()
+    {
+        
+    }
+}
