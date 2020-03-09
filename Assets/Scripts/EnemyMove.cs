@@ -41,6 +41,7 @@ public class EnemyMove : MonoBehaviour
         {
             arrived = true;
             animator.SetFloat("Speed", 0f);
+            velocity = Vector3.zero;
         }
         velocity.y += Physics.gravity.y * Time.deltaTime;
         enemyContoroller.Move(velocity * Time.deltaTime);
