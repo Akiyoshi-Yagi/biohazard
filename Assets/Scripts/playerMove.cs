@@ -14,7 +14,7 @@ public class playerMove : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        transform.position = new Vector3(0f, 1f, 0f);
+        //transform.position = new Vector3(0f, 1f, 0f);
         animator = GetComponent<Animator>();
     }
 
