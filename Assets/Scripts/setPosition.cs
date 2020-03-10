@@ -18,7 +18,8 @@ public class setPosition : MonoBehaviour
     {
         var randDestination = Random.insideUnitCircle * 8;
         SetDestination(startPosition + new Vector3(randDestination.x, 0, randDestination.y));
-        Debug.Log("スタート" + startPosition);
+        //Debug.Log("スタート" + startPosition);
+        //
     }
 
     public void SetDestination(Vector3 position)

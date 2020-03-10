@@ -16,7 +16,8 @@ public class SearchCharacter : MonoBehaviour
     {
         if(col.tag == "Player")
         {
-            
+
+            //疑問点として、EnemyMove.EnemyStateは型宣言として機能しているの？
             EnemyMove.EnemyState state = enemyMove.GetState();
             if(state != EnemyMove.EnemyState.Chase)
             {
