@@ -19,7 +19,7 @@ public class SearchCharacter : MonoBehaviour
 
             //疑問点として、EnemyMove.EnemyStateは型宣言として機能しているの？
             EnemyMove.EnemyState state = enemyMove.GetState();
-            if(state != EnemyMove.EnemyState.Chase)
+            if(state == EnemyMove.EnemyState.Wait || state == EnemyMove.EnemyState.Walk)
             {
                 Debug.Log("プレイヤー発見！！！");
                 enemyMove.SetState(EnemyMove.EnemyState.Chase, col.transform);

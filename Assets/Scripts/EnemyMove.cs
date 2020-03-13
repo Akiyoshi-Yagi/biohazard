@@ -11,6 +11,7 @@ public class EnemyMove : MonoBehaviour
     
     [SerializeField] private float walkSpeed = 1.0f;
     [SerializeField] private float waitTime = 5f;
+    [SerializeField] private float freezeTime = 0.5f;
 
     private Vector3 destination;
     private Vector3 velocity;
@@ -27,7 +28,9 @@ public class EnemyMove : MonoBehaviour
     {
         Walk,
         Wait,
-        Chase
+        Chase,
+        Attack,
+        Freeze
     };
 
 
@@ -51,6 +54,7 @@ public class EnemyMove : MonoBehaviour
         if (state == EnemyState.Walk || state == EnemyState.Chase)
         {
             //　キャラクターを追いかける状態であればキャラクターの目的地を再設定
+            //Walk状態なら目的地はそのまま
             if (state == EnemyState.Chase)
             {
                 setPosition.SetDestination(playerTransform.position);
@@ -64,13 +68,23 @@ public class EnemyMove : MonoBehaviour
                 velocity = direction * walkSpeed;
             }
 
-            //　目的地に到着したかどうかの判定
-            if (Vector3.Distance(transform.position, setPosition.GetDestination()) < 0.7f)
+            if (state == EnemyState.Walk)
             {
-                SetState(EnemyState.Wait);
-                animator.SetFloat("Speed", 0.0f);
+                if (Vector3.Distance(transform.position, setPosition.GetDestination()) < 0.7f)
+                {
+                    SetState(EnemyState.Wait);
+                    animator.SetFloat("Speed", 0.0f);
+                }
             }
-            //　到着していたら一定時間待つ
+            else if (state == EnemyState.Chase)
+            {
+                if (Vector3.Distance(transform.position, setPosition.GetDestination()) < 1.0f)
+                {
+                    SetState(EnemyState.Attack);
+                    //animator.SetFloat("Speed", 0.0f);
+                }
+            }
+            //　目的地に到着したかどうかの判定
         }
         else if (state == EnemyState.Wait)
         {
@@ -82,6 +96,19 @@ public class EnemyMove : MonoBehaviour
                 SetState(EnemyState.Walk);
             }
         }
+
+        //フリーズ明けはとりあえずwalkに遷移させとけばええやん！！！
+        else if(state == EnemyState.Freeze)
+        {
+            elapsedTime += Time.deltaTime;
+            if(elapsedTime > freezeTime)
+            {
+                SetState(EnemyState.Walk);
+            }
+        }
+
+
+        //ほんとはここの速度計算するところは積分したいけどここでは簡単に和を計算するだけにする
         velocity.y += Physics.gravity.y * Time.deltaTime;
         enemyController.Move(velocity * Time.deltaTime);
     }
@@ -107,6 +134,22 @@ public class EnemyMove : MonoBehaviour
             arrived = true;
             velocity = Vector3.zero;
             animator.SetFloat("Speed", 0f);
+        }
+        else if (tempState == EnemyState.Attack)
+        {
+            state = tempState;
+            velocity = Vector3.zero;
+            animator.SetFloat("Speed", 0f);
+            animator.SetBool("Attack", true);
+        }
+        else if (tempState == EnemyState.Freeze)
+        {
+            state = tempState;
+            elapsedTime = 0f;
+            velocity = Vector3.zero;
+            animator.SetFloat("Speed", 0f);
+            animator.SetBool("Attack", false);
+
         }
 
     }

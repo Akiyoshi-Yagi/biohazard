@@ -79,15 +79,20 @@
     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
+    <Compile Include="Assets\Scripts\AnimAttackEnemy.cs" />
+    <Compile Include="Assets\Scripts\AnimDamagedOre.cs" />
     <Compile Include="Assets\Scripts\AppearEnemys.cs" />
     <Compile Include="Assets\Scripts\AppearSE.cs" />
+    <Compile Include="Assets\Scripts\AttackEnemy.cs" />
     <Compile Include="Assets\Scripts\EnemyMove.cs" />
     <Compile Include="Assets\Scripts\GenerateEffect.cs" />
     <Compile Include="Assets\Scripts\SearchCharacter.cs" />
     <Compile Include="Assets\Scripts\changeCamera.cs" />
     <Compile Include="Assets\Scripts\playerMove.cs" />
     <Compile Include="Assets\Scripts\setPosition.cs" />
+    <None Include="Assets\Toon Zombie S\TSF\Shaders\TSF.shader" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
+    <None Include="Assets\Toon Zombie S\TSF\Shaders\TSFOutline.shader" />
     <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/merry/Unity/biohazard/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
@@ -107,20 +112,20 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>/Users/merry/Unity/biohazard/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Postprocessing.Editor">
+      <HintPath>/Users/merry/Unity/biohazard/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>/Users/merry/Unity/biohazard/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>/Users/merry/Unity/biohazard/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>/Users/merry/Unity/biohazard/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>/Users/merry/Unity/biohazard/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>/Users/merry/Unity/biohazard/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>/Users/merry/Unity/biohazard/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/2019.3.0f6/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
