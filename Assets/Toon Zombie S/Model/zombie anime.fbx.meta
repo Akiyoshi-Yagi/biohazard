@@ -404,8 +404,8 @@ ModelImporter:
       to improve retargeting quality.\n\t'chin' has translation animation that will
       be discarded.\n\t'body2' is inbetween humanoid transforms and has rotation
       animation that will be discarded.\n\t'leg1_R' has translation animation that
-      will be discarded.\nEvent EndDamage has a time (1.041667) outside the clip's
-      valid range (0.000000..1.041666). It will never be fired"
+      will be discarded.\nEvent EndDamage has a time (0.416667) outside the clip's
+      valid range (0.000000..0.416666). It will never be fired"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -696,7 +696,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.97536945
+      - time: 0.8719212
         functionName: StateEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
